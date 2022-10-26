@@ -1,11 +1,16 @@
-<ul>
-    <% @experiences.each do |experience| %>
-        <li>
-            <strong><%= experience.title %> </strong>
-            in <%= experience.location %>: 
-            <%= price(experience) %>
-        </li>
-        <p><%= experience.description %></p>
-        <p><%= day_and_time(experience) %></p>
-    <% end %>
-</ul>
+
+<% @experiences.each do |experience| %>
+    <section class="experience">
+        <div class="summary">
+            <h2><%= experience.title %> </h2>
+
+            <h3>
+                <%= day_and_time(experience) %> in <%= experience.location %>
+            </h3>
+
+            <span class="price"><%= price(experience) %></span>
+            
+            <p><%= experience.description %></p>
+        </div>
+    </section>
+<% end %>
