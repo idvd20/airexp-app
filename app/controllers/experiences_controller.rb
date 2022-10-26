@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
     def index
-        @experiences = ["Murder Mystery"]
+        @experiences = Experience.all
     end
 end
