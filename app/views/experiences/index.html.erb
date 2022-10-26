@@ -4,6 +4,7 @@
             <strong><%= experience.title %> </strong>
             in <%= experience.location %>: <%= number_to_currency(experience.price, precision: 0, unit: "₱") %>
         </li>
-
+        <p><%= experience.description %></p>
+        <p><%= experience.starts_at %></p>
     <% end %>
 </ul>
