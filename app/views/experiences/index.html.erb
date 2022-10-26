@@ -2,9 +2,10 @@
     <% @experiences.each do |experience| %>
         <li>
             <strong><%= experience.title %> </strong>
-            in <%= experience.location %>: <%= number_to_currency(experience.price, precision: 0, unit: "₱") %>
+            in <%= experience.location %>: 
+            <%= price(experience) %>
         </li>
         <p><%= experience.description %></p>
-        <p><%= experience.starts_at %></p>
+        <p><%= day_and_time(experience) %></p>
     <% end %>
 </ul>

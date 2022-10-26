@@ -1,2 +1,6 @@
 class Experience < ApplicationRecord
+
+    def free?
+        price.zero? || price.blank?
+    end
 end
