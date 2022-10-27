@@ -2,7 +2,7 @@
 <% @experiences.each do |experience| %>
     <section class="experience">
         <div class="summary">
-            <h2><%= experience.title %> </h2>
+            <h2><%= link_to experience.title, experience %> </h2>
 
             <h3>
                 <%= day_and_time(experience) %> in <%= experience.location %>

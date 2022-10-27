@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   root "experiences#index"
 
   get "experiences" => "experiences#index"
-  get "experiences/:id" => "experiences#show"
+  get "experiences/:id" => "experiences#show", as: "experience"
 end
