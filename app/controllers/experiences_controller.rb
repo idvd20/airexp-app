@@ -1,7 +1,7 @@
 class ExperiencesController < ApplicationController
 
     def index
-        @experiences = Experience.all
+        @experiences = Experience.upcoming
     end
 
     def show
