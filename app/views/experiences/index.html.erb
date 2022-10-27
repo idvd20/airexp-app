@@ -1,5 +1,8 @@
 <% @experiences.each do |experience| %>
     <section class="experience">
+        <div class="image">
+            <%= image_tag experience.image_file_name %>
+        </div>
         <div class="summary">
             <h2><%= link_to experience.title, experience %> </h2>
 

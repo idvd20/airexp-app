@@ -31,12 +31,12 @@ class ExperiencesController < ApplicationController
     def destroy
         @experience = Experience.find(params[:id])
         @experience.destroy
-        redirect_to 'experiences_url', status: :see_other
+        redirect_to experiences_url, status: :see_other
     end
 
     private
 
         def experience_params
-            params.require(:experience).permit(:title, :location, :starts_at, :price, :description)
+            params.require(:experience).permit(:title, :location, :starts_at, :price, :description, :capacity, :image_file_name)
         end
 end
