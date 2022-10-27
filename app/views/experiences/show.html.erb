@@ -15,4 +15,5 @@
 
 <section class="admin">
     <%= link_to 'Edit', edit_experience_path(@experience), class: "button" %>
+    <%= link_to 'Delete', @experience, class: "button", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </section>

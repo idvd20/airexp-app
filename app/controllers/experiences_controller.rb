@@ -28,6 +28,12 @@ class ExperiencesController < ApplicationController
         redirect_to @experience
     end
 
+    def destroy
+        @experience = Experience.find(params[:id])
+        @experience.destroy
+        redirect_to 'experiences_url', status: :see_other
+    end
+
     private
 
         def experience_params
