@@ -8,5 +8,9 @@ class ExperiencesController < ApplicationController
         @experience = Experience.find(params[:id])
     end
 
+    def edit
+        @experience = Experience.find(params[:id])
+    end
+
     private
 end
