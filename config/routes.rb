@@ -6,8 +6,5 @@ Rails.application.routes.draw do
 
   root "experiences#index"
 
-  get "experiences" => "experiences#index"
-  get "experiences/:id" => "experiences#show", as: "experience"
-  get "experiences/:id/edit" => "experiences#edit", as: "edit_experience"
-  patch "experiences/:id" => "experiences#update"
+  resources :experiences
 end

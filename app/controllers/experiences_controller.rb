@@ -18,6 +18,16 @@ class ExperiencesController < ApplicationController
         redirect_to @experience
     end
 
+    def new
+        @experience = Experience.new
+    end
+
+    def create
+        @experience = Experience.new(experience_params)
+        @experience.save
+        redirect_to @experience
+    end
+
     private
 
         def experience_params
