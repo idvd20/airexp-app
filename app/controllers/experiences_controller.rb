@@ -12,5 +12,15 @@ class ExperiencesController < ApplicationController
         @experience = Experience.find(params[:id])
     end
 
+    def update
+        @experience = Experience.find(params[:id])
+        @experience.update(experience_params)
+        redirect_to @experience
+    end
+
     private
+
+        def experience_params
+            params.require(:experience).permit(:title, :location, :starts_at, :price, :description)
+        end
 end
