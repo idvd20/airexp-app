@@ -1,0 +1,14 @@
+<section class="experience-details">
+    <div class="details">
+        <h1><%= @experience.title %></h1>
+        <h2>
+            <%= price(@experience) %>
+        </h2>
+        <h3>
+            <%= day_and_time(@experience) %> in <%= @experience.location %>
+        </h3>
+        <p>
+            <%= @experience.description %>
+        </p>
+    </div>
+</section>
