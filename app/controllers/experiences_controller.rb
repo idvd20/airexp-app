@@ -37,7 +37,7 @@ class ExperiencesController < ApplicationController
     def destroy
         @experience = Experience.find(params[:id])
         @experience.destroy
-        redirect_to experiences_url, status: :see_other
+        redirect_to experiences_url, status: :see_other, alert: "Experience successfully deleted!"
     end
 
     private
