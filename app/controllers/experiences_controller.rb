@@ -15,7 +15,7 @@ class ExperiencesController < ApplicationController
     def update
         @experience = Experience.find(params[:id])
         if @experience.update(experience_params)
-            redirect_to @experience
+            redirect_to @experience, notice: "Event successfully updated"
         else
             render :edit, status: :unprocessable_entity
         end
@@ -28,7 +28,7 @@ class ExperiencesController < ApplicationController
     def create
         @experience = Experience.new(experience_params)
         if @experience.save
-            redirect_to @experience
+            redirect_to @experience, notice: "Event successfully created"
         else
             render :new, status: :unprocessable_entity
         end
