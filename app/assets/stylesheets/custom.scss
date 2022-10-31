@@ -494,6 +494,18 @@ form:not([class="button_to"]) {
 		margin-bottom: 0.5rem;
 	}
 
+	input[type="radio"] {
+		@extend .form-check-input;
+		width: 20px;
+		height: 20px;
+	}
+
+	input[type="radio"] + label {
+		@extend .form-check-label;
+		margin-bottom: 0.6rem;
+		font-weight: 400;
+	}
+
 	input[type="file"] {
 		margin-bottom: 0.75rem;
 		width: 100%;

@@ -1,0 +1,18 @@
+<h1>Registration for <%= link_to @experience.title, @experience %></h1>
+
+<%= form_with(model: [@experience, @registration]) do |f| %>
+
+    <%= render "shared/errors", object: @registration %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %>
+    
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :stars %>
+    <%= f.select :stars , Registration::STARS, prompt: "Rate" %>
+
+    <%= f.submit %>
+
+<% end %>

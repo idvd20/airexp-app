@@ -18,7 +18,10 @@
         </p>
 
         <div class="register">
-            <%= link_to "Who's registered", experience_registrations_path(@experience) %>
+            <%= link_to 'Register!', new_experience_registration_path(@experience), class: "register" %>
+            <p>
+                <%= link_to "Who's registered", experience_registrations_path(@experience) %>
+            </p>
         </div>
     </div>
 </section>
