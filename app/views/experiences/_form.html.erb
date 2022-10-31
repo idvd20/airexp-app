@@ -1,4 +1,7 @@
 <%= form_with(model: experience) do |f| %>
+
+    <%= render 'shared/errors', object: experience  %>
+
     <%= f.label :title %>
     <%= f.text_field :title, autofocus: true %>
 

@@ -14,8 +14,11 @@ class ExperiencesController < ApplicationController
 
     def update
         @experience = Experience.find(params[:id])
-        @experience.update(experience_params)
-        redirect_to @experience
+        if @experience.update(experience_params)
+            redirect_to @experience
+        else
+            render :edit, status: :unprocessable_entity
+        end
     end
 
     def new
@@ -24,8 +27,11 @@ class ExperiencesController < ApplicationController
 
     def create
         @experience = Experience.new(experience_params)
-        @experience.save
-        redirect_to @experience
+        if @experience.save
+            redirect_to @experience
+        else
+            render :new, status: :unprocessable_entity
+        end
     end
 
     def destroy
