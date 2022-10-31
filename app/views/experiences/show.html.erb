@@ -16,6 +16,10 @@
         <p>
             <%= @experience.description %>
         </p>
+
+        <div class="register">
+            <%= link_to "Who's registered", experience_registrations_path(@experience) %>
+        </div>
     </div>
 </section>
 

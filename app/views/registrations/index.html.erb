@@ -1,0 +1,8 @@
+<h1>Registrations for <%= link_to @experience.title, @experience %></h1>
+<ul class="registrations">
+    <% @registrations.each do |r| %>
+        <li>
+            <%= r.name %>
+        </li>
+    <% end %>
+</ul>
