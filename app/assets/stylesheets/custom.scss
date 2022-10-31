@@ -181,6 +181,11 @@ section.experience {
 		float: right;
 		margin-top: -3.5rem;
 	}
+
+	span.stars {
+		float: right;
+		margin-top: -3.75rem;
+	}
 }
 
 // Experience Show Page
@@ -546,5 +551,31 @@ section.errors {
 		font-size: 1rem;
 		margin-top: 1rem;
 		font-weight: 600;
+	}
+}
+
+// Star Rating
+//
+// Credit: https://codepen.io/filcp/pen/QvZVOg
+
+.star-rating {
+	display: flex;
+	align-items: center;
+	font-size: 25px;
+	height: 25px;
+	justify-content: left;
+
+	.back-stars {
+		display: flex;
+		color: $light-gray;
+		position: relative;
+		// text-shadow: 0px 1px 0 #a2a2a2;
+	}
+	.front-stars {
+		display: flex;
+		color: $accent-color;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
 	}
 }
