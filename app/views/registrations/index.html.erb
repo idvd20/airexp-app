@@ -2,7 +2,13 @@
 <ul class="registrations">
     <% @registrations.each do |r| %>
         <li>
-            <%= r.name %>
+            <%= pluralize(r.stars, 'star') %>
+            <p>
+                <%= r.name %>
+                <span class="date">
+                <%= time_ago_in_words(r.created_at) %> ago
+                </span>
+            </p>
         </li>
     <% end %>
 </ul>
