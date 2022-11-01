@@ -7,6 +7,7 @@
     </div>
     <div class="details">
         <h2>
+            <%= render "shared/stars", percent: @experience.average_stars_as_percent %>
             <%= pluralize(@experience.capacity, "spot") %> &bull;
             <%= price(@experience) %>
         </h2>
@@ -18,7 +19,7 @@
         </p>
 
         <div class="register">
-            <%= link_to 'Register!', new_experience_registration_path(@experience), class: "register" %>
+            <%= register_or_sold_out(@experience) %>
             <p>
                 <%= link_to "Who's registered", experience_registrations_path(@experience) %>
             </p>

@@ -19,4 +19,15 @@ class Experience < ApplicationRecord
         price.zero? || price.blank?
     end
     
+    def sold_out?
+        (capacity - registrations.size).zero?
+    end
+
+    def average_stars
+        registrations.average(:stars) || 0.0
+    end
+
+    def average_stars_as_percent
+        (self.average_stars / 5.0) * 100
+    end
 end

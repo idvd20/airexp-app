@@ -1,18 +1,17 @@
 <% @experiences.each do |experience| %>
     <section class="experience">
-        <div class="image">
-            <%= image_tag experience.image_file_name %>
-        </div>
         <div class="summary">
+            <div class="image">
+                <%= image_tag experience.image_file_name %>
+            </div>
+            <span class="stars">
+                <%= render "shared/stars", percent: experience.average_stars_as_percent %>
+                <div class="rating">
+                    <%= experience.average_stars %>
+                </div>
+            </span>
             <h2><%= link_to experience.title, experience %> </h2>
-
-            <h3>
-                <%= day_and_time(experience) %> in <%= experience.location %>
-            </h3>
-
-            <span class="price"><%= price(experience) %></span>
-            
-            <p><%= experience.description %></p>
+            <span class="price"><strong>From <%= price(experience) %> </strong>/ person</span>
         </div>
     </section>
 <% end %>

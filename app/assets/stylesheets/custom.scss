@@ -133,29 +133,33 @@ header {
 // Experiences Index Page
 
 section.experience {
-	@extend .row;
+	// @extend .row;
+	display: inline-flex;
 	margin-bottom: 1.5rem;
-	padding-bottom: 1em;
-	border-bottom: 1px dotted $border-color;
+	padding: 1rem;
+	border-bottom: 1px;
 
 	&:nth-last-child(1) {
 		border-bottom: none;
 	}
 
 	.image {
-		@extend .col-md-3, .text-center;
+		// @extend .col-md-3, .text-center;
 		img {
 			margin-top: 1rem;
-			width: 200px;
+			margin-bottom: 1rem;
+			width: 250px;
+			border-radius: 15px;
 		}
 	}
 
 	.summary {
-		@extend .col-md-9, .text-start;
+		// @extend .col-md-3, .text-start;
+		width: 19vw;
 	}
 
 	h2 {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		margin-bottom: 0.25rem;
 	}
 
@@ -163,6 +167,7 @@ section.experience {
 		font-size: 1.1rem;
 		color: $secondary-text-color;
 		font-weight: 400;
+		margin-top: 0.5rem;
 	}
 
 	p {
@@ -170,21 +175,27 @@ section.experience {
 	}
 
 	span.price {
-		background: $accent-color;
+		// background: $accent-color;
 		letter-spacing: 1px;
-		color: $off-white;
-		padding: 5px;
+		color: black;
+		// padding: 5px;
 		font-size: 0.85rem;
-		font-weight: 300;
+		font-weight: 500;
 		transform: rotate(-1deg) skew(-3deg);
 		text-transform: uppercase;
-		float: right;
-		margin-top: -3.5rem;
+		// margin: 0.5rem;
+		// float: right;
+		// margin-top: -2.5rem;
 	}
 
 	span.stars {
-		float: right;
-		margin-top: -3.75rem;
+		// float: right;
+		// margin-top: -2.75rem;
+		display: flex;
+
+		.rating {
+			margin-left: 1rem;
+		}
 	}
 }
 
