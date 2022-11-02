@@ -4,7 +4,8 @@ module ExperiencesHelper
         if experience.free?
             "Free"
         else
-            number_to_currency(experience.price, precision: 0, unit: "₱")
+            content_tag(:span, "From #{number_to_currency(experience.price, precision: 0, unit: "₱")} / person")
+            # number_to_currency(experience.price, precision: 0, unit: "₱")
         end
     end
 

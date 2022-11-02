@@ -1,7 +1,7 @@
 // Colors
 
 $black: #393939;
-$off-white: #ededed;
+$off-white: #fcfcfc;
 $dark-gray: #666;
 $medium-gray: #6c757d;
 $light-gray: #c2c2c2;
@@ -55,6 +55,7 @@ header {
 	background-color: white;
 	padding: 0.5rem;
 	margin-bottom: 3rem;
+	box-shadow: 0 0 8px 0 rgb(225, 225, 225);
 
 	nav {
 		@extend .navbar, .navbar-expand-md;
@@ -149,6 +150,7 @@ section.experience {
 			margin-top: 1rem;
 			margin-bottom: 1rem;
 			width: 250px;
+			height: 350px;
 			border-radius: 15px;
 		}
 	}

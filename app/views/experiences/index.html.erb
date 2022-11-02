@@ -2,7 +2,7 @@
     <section class="experience">
         <div class="summary">
             <div class="image">
-                <%= image_tag experience.image_file_name %>
+                <%= link_to image_tag(experience.image_file_name), experience %>
             </div>
             <span class="stars">
                 <%= render "shared/stars", percent: experience.average_stars_as_percent %>
@@ -11,7 +11,7 @@
                 </div>
             </span>
             <h2><%= link_to experience.title, experience %> </h2>
-            <span class="price"><strong>From <%= price(experience) %> </strong>/ person</span>
+            <%= price(experience) %>
         </div>
     </section>
 <% end %>
