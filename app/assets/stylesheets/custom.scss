@@ -1,7 +1,7 @@
 // Colors
 
 $black: #393939;
-$off-white: #fcfcfc;
+$off-white: #dddddd;
 $dark-gray: #666;
 $medium-gray: #6c757d;
 $light-gray: #c2c2c2;
@@ -16,7 +16,7 @@ $red: #dc3545;
 
 $secondary-text-color: $medium-gray;
 $accent-color: $orange;
-$secondary-link-color: $light-blue;
+$secondary-link-color: $black;
 $border-color: $light-gray;
 $error-color: $red;
 $error-background-color: $light-yellow;
@@ -25,7 +25,7 @@ $sold-out-color: $yellow;
 // Bootstrap Variable Overrides
 
 $body-color: $black;
-$body-bg: $off-white;
+$body-bg: #ffffff;
 $primary: $blue;
 $secondary: $dark-gray;
 $min-contrast-ratio: 4;
@@ -52,7 +52,7 @@ a:hover {
 // Header and Nav
 
 header {
-	background-color: white;
+	background-color: #ffffff;
 	padding: 0.5rem;
 	margin-bottom: 3rem;
 	box-shadow: 0 0 8px 0 rgb(225, 225, 225);
@@ -106,15 +106,15 @@ header {
 				.button,
 				button {
 					margin-right: 10px;
-					color: $off-white;
-					border-color: $off-white;
+					color: $black;
+					border-color: white;
 				}
 
 				.button:hover,
 				button:hover {
 					background: $off-white;
-					color: $primary;
-					border-color: $primary;
+					color: $black;
+					border-color: white;
 				}
 
 				button {
@@ -395,8 +395,8 @@ ul.registrations {
 // Footer
 
 footer {
-	background: $black;
-	color: $light-gray;
+	background: #f7f7f7;
+	color: $black;
 	text-align: center;
 	margin-top: 3rem;
 	padding-top: 2rem;
