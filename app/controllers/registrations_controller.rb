@@ -1,6 +1,7 @@
 class RegistrationsController < ApplicationController
 
-    before_action :set_experience 
+    before_action :set_experience
+    before_action :require_signin
 
     def index
         @registrations = @experience.registrations
@@ -12,7 +13,7 @@ class RegistrationsController < ApplicationController
     
     def create
         @registration = @experience.registrations.new(registration_params)
-
+        @registration.user = current_user
         if @registration.save
             redirect_to experience_registrations_url(@experience), notice: "Thank for registering!"
         else
@@ -26,6 +27,6 @@ class RegistrationsController < ApplicationController
         end
 
         def registration_params
-            params.require(:registration).permit(:name, :email, :stars)
+            params.require(:registration).permit(:stars)
         end
 end

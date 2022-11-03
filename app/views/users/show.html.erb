@@ -16,4 +16,20 @@
                 class: "button delete" %>
         <% end %>
     </div>
+    <% if @registrations.present? %>
+        <h3>Registrations</h3>
+        <% @registrations.each do |r| %>
+            <div class="registration">
+                <div class="image">
+                    <%= link_to image_tag(r.experience.image_file_name), r.experience %>
+                </div>
+                <div class="name">
+                    <%= link_to r.experience.title, r.experience %>
+                </div>
+                <div class="date">
+                    <%= time_ago_in_words(r.created_at) %> ago
+                </div>
+            </div>
+        <% end %>
+    <% end %>
 </section>
