@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     end
 
     def create
+        session[:user_id] = @user.id
         @user = User.new(user_params)
         if @user.save
             redirect_to @user, notice: "Thanks for signing up!"
