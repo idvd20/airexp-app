@@ -4,7 +4,7 @@ class ExperiencesController < ApplicationController
     before_action :require_host, except: [:index, :show]
 
     def index
-        @experiences = Experience.upcoming
+        @experiences = Experience.all
     end
 
     def show

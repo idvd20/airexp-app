@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_03_151447) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_171046) do
   create_table "experiences", force: :cascade do |t|
     t.string "title"
     t.string "location"
@@ -24,12 +24,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_151447) do
   end
 
   create_table "registrations", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
     t.integer "experience_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "stars"
+    t.integer "user_id"
     t.index ["experience_id"], name: "index_registrations_on_experience_id"
   end
 
