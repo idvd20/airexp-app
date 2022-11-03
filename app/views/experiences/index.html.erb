@@ -16,6 +16,8 @@
     </section>
 <% end %>
 
-<section class="admin">
-    <%= link_to 'Add New Experience', new_experience_path, class: "button" %>
-</section>
+<% if current_user_host? %>
+    <section class="host ">
+        <%= link_to 'Add New Experience', new_experience_path, class: "button" %>
+    </section>
+<% end %>

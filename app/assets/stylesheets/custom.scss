@@ -405,7 +405,7 @@ footer {
 
 // Admin Section
 
-section.admin {
+section.host {
 	text-align: center;
 	margin: 3rem 0;
 	padding-top: 2rem;
@@ -424,7 +424,7 @@ section.admin {
 	}
 }
 
-section.experience + section.admin {
+section.experience + section.host {
 	border-top: none;
 	padding-top: 0;
 }

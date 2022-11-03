@@ -1,5 +1,8 @@
 class ExperiencesController < ApplicationController
 
+    before_action :require_signin, except: [:index, :show]
+    before_action :require_host, except: [:index, :show]
+
     def index
         @experiences = Experience.upcoming
     end
