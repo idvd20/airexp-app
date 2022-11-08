@@ -4,6 +4,14 @@
     </div>
     <div class="image">
         <%= image_tag @experience.image_file_name %>
+        <div class="likes">
+        <% if current_user %>
+            <%= like_or_unlike_button(@experience, @like) %>
+            <div class="count">
+                <%= @likers.size %>
+            </div>
+        <% end %>
+        </div>
     </div>
     <div class="details">
         <h2>
@@ -39,7 +47,7 @@
                 </ul>
             <% end %>
         </aside>
-        
+
     </div>
 </section>
 

@@ -10,6 +10,9 @@ class ExperiencesController < ApplicationController
     def show
         @experience = Experience.find(params[:id])
         @likers = @experience.likers
+        if current_user
+            @like = current_user.likes.find_by(experience_id: @experience.id)
+        end
     end
 
     def edit

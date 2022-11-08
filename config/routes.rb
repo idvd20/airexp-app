@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :likes
   
   root "experiences#index"
   
   resources :experiences do
     resources :registrations
+    resources :likes
   end
   resource :session, only: [:new, :create, :destroy]
   resources :users
