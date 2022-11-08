@@ -1,5 +1,6 @@
 class Experience < ApplicationRecord
     has_many :registrations, dependent: :destroy
+    has_many :likes, dependent: :destroy
 
     validates :title, :location, presence: true
     validates :description, length: {minimum:25}

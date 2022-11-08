@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_03_171046) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_08_053255) do
   create_table "experiences", force: :cascade do |t|
     t.string "title"
     t.string "location"
@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_171046) do
     t.text "description"
     t.string "image_file_name", default: "placeholder.jpeg"
     t.integer "capacity", default: 1
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "experience_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_likes_on_experience_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "registrations", force: :cascade do |t|
@@ -42,5 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_171046) do
     t.boolean "host", default: false
   end
 
+  add_foreign_key "likes", "experiences"
+  add_foreign_key "likes", "users"
   add_foreign_key "registrations", "experiences"
 end
