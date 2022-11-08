@@ -9,6 +9,7 @@ class ExperiencesController < ApplicationController
 
     def show
         @experience = Experience.find(params[:id])
+        @likers = @experience.likers
     end
 
     def edit

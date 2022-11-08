@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         @registrations = @user.registrations
+        @liked_experiences = @user.liked_experiences
     end
 
     def new

@@ -6,6 +6,7 @@
     <p>
         <%= @user.created_at.strftime("%B %Y") %>
     </p>
+
     <div class="actions">
         <% if current_user?(@user) %>
             <%= link_to 'Edit Account', edit_user_path, class: "button edit" %>
@@ -16,6 +17,7 @@
                 class: "button delete" %>
         <% end %>
     </div>
+
     <% if @registrations.present? %>
         <h3>Registrations</h3>
         <% @registrations.each do |r| %>
@@ -31,5 +33,14 @@
                 </div>
             </div>
         <% end %>
+    <% end %>
+
+    <% if @liked_experiences.present? %>
+        <h3>Liked Experiences</h3>
+        <div class="liked-experiences">
+            <% @liked_experiences.each do |experience| %>
+                <%= link_to image_tag(experience.image_file_name), experience %>
+            <% end %>
+        </div>
     <% end %>
 </section>
