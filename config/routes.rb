@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   resources :experiences do
     resources :registrations
-    resources :likes
+    resources :likes, only: [:create, :destroy]
   end
   resource :session, only: [:new, :create, :destroy]
   resources :users
