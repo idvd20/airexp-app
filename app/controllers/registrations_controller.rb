@@ -23,7 +23,7 @@ class RegistrationsController < ApplicationController
 
     private
         def set_experience
-            @experience = Experience.find(params[:experience_id])
+            @experience = Experience.find_by!(slug: params[:experience_id])
         end
 
         def registration_params

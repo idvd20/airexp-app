@@ -2,13 +2,13 @@ class ExperiencesController < ApplicationController
 
     before_action :require_signin, except: [:index, :show]
     before_action :require_host, except: [:index, :show]
+    before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
     def index
         @experiences = Experience.all
     end
 
     def show
-        @experience = Experience.find(params[:id])
         @likers = @experience.likers
         if current_user
             @like = current_user.likes.find_by(experience_id: @experience.id)
@@ -16,11 +16,9 @@ class ExperiencesController < ApplicationController
     end
 
     def edit
-        @experience = Experience.find(params[:id])
     end
 
     def update
-        @experience = Experience.find(params[:id])
         if @experience.update(experience_params)
             redirect_to @experience, notice: "Event successfully updated"
         else
@@ -42,7 +40,6 @@ class ExperiencesController < ApplicationController
     end
 
     def destroy
-        @experience = Experience.find(params[:id])
         @experience.destroy
         redirect_to experiences_url, status: :see_other, alert: "Experience successfully deleted!"
     end
@@ -50,6 +47,10 @@ class ExperiencesController < ApplicationController
     private
 
         def experience_params
-            params.require(:experience).permit(:title, :location, :starts_at, :price, :description, :capacity, :image_file_name)
+            params.require(:experience).permit(:title, :location, :starts_at, :price, :description, :capacity, :image_file_name, :slug)
+        end
+
+        def set_experience
+            @experience = Experience.find_by!(slug: params[:id])
         end
 end

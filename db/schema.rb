@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_08_053255) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_09_150634) do
   create_table "experiences", force: :cascade do |t|
     t.string "title"
     t.string "location"
@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_053255) do
     t.text "description"
     t.string "image_file_name", default: "placeholder.jpeg"
     t.integer "capacity", default: 1
+    t.string "slug"
   end
 
   create_table "likes", force: :cascade do |t|

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     before_action :require_host?, only: [:destroy]
 
     def index
-        @users = User.all
+        @users = User.not_host
     end
 
     def show
