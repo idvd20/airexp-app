@@ -14,14 +14,18 @@
         </div>
     </div>
     <div class="details">
+        <%= render "shared/stars", percent: @experience.average_stars_as_percent %>
         <h2>
-            <%= render "shared/stars", percent: @experience.average_stars_as_percent %>
             <%= pluralize(@experience.capacity, "spot") %> &bull;
             <%= price(@experience) %>
         </h2>
 
         <h3>
             <%= day_and_time(@experience) %> in <%= @experience.location %>
+        </h3>
+
+        <h3>
+            <strong>What You'll do</strong>
         </h3>
 
         <p>

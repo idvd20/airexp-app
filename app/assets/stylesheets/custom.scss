@@ -160,6 +160,10 @@ section.experience {
 		width: 19vw;
 	}
 
+	div {
+		padding-right: 0.25rem;
+	}
+
 	h2 {
 		font-size: 1.2rem;
 		margin-bottom: 0.25rem;
@@ -196,7 +200,7 @@ section.experience {
 		display: flex;
 
 		.rating {
-			margin-left: 1rem;
+			margin-left: 0.3rem;
 		}
 	}
 }
@@ -228,6 +232,7 @@ section.experience-details {
 
 	h2 {
 		font-size: 1.35rem;
+		margin-top: 0.5rem;
 		color: $secondary-text-color;
 	}
 
@@ -240,7 +245,8 @@ section.experience-details {
 
 	.likes {
 		@extend .input-group;
-		margin-top: 1rem;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
 
 		.count {
 			@extend .input-group-text;
@@ -265,7 +271,7 @@ section.experience-details {
 
 	img {
 		margin-top: 0.5rem;
-		margin-bottom: 1rem;
+		margin-bottom: 0.7rem;
 		height: 400px;
 	}
 
@@ -598,7 +604,7 @@ section.errors {
 	}
 	.front-stars {
 		display: flex;
-		color: $accent-color;
+		color: $black;
 		overflow: hidden;
 		position: absolute;
 		top: 0;

@@ -9,6 +9,9 @@
                 <div class="rating">
                     <%= experience.average_stars %>
                 </div>
+                <div>
+                    (<%= experience.likes.size %>)
+                </div>
             </span>
             <h2><%= link_to experience.title, experience %> </h2>
             <%= price(experience) %>
