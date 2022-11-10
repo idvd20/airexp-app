@@ -47,7 +47,7 @@ class ExperiencesController < ApplicationController
     private
 
         def experience_params
-            params.require(:experience).permit(:title, :location, :starts_at, :price, :description, :capacity, :image_file_name, :slug)
+            params.require(:experience).permit(:title, :location, :starts_at, :price, :description, :capacity, :main_image, :slug)
         end
 
         def set_experience

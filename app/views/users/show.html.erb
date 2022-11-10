@@ -23,7 +23,7 @@
         <% @registrations.each do |r| %>
             <div class="registration">
                 <div class="image">
-                    <%= link_to image_tag(r.experience.image_file_name), r.experience %>
+                    <%= link_to main_image(r.experience), r.experience %>
                 </div>
                 <div class="name">
                     <%= link_to r.experience.title, r.experience %>
@@ -39,7 +39,7 @@
         <h3>Liked Experiences</h3>
         <div class="liked-experiences">
             <% @liked_experiences.each do |experience| %>
-                <%= link_to image_tag(experience.image_file_name), experience %>
+                <%= link_to main_image(experience), experience %>
             <% end %>
         </div>
     <% end %>

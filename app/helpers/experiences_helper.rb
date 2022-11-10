@@ -12,4 +12,12 @@ module ExperiencesHelper
     def day_and_time(experience)
         experience.starts_at.strftime("%B %d at %I:%M %P")
     end
+
+    def main_image(experience)
+        if experience.main_image.attached?
+            image_tag experience.main_image
+        else
+            image_tag "placeholder.png"
+        end
+    end
 end

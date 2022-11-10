@@ -2,7 +2,7 @@
     <section class="experience">
         <div class="summary">
             <div class="image">
-                <%= link_to image_tag(experience.image_file_name), experience %>
+                <%= link_to main_image(experience), experience %>
             </div>
             <span class="stars">
                 <%= render "shared/stars", percent: experience.average_stars_as_percent %>

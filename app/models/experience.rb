@@ -1,6 +1,8 @@
 class Experience < ApplicationRecord
     before_save :set_slug
 
+    has_one_attached :main_image
+
     has_many :registrations, dependent: :destroy
     has_many :likes, dependent: :destroy
     has_many :likers, through: :likes, source: :user
@@ -10,8 +12,7 @@ class Experience < ApplicationRecord
     validates :description, length: {minimum:25}
     validates :price, numericality: {greater_than_or_equal_to: 0}
     validates :capacity, numericality: {only_integer: true, greater_than: 0}
-    validates :image_file_name, format: { with: /\w+\.(jpg|png|jpeg)\z/i, message: "must be a JPG, JPEG, or PNG image" }
-    
+    validate :acceptable_image
 
     scope :past, -> { where("starts_at < ?", Time.now).order("starts_at") }
     scope :upcoming, -> { where("starts_at > ?", Time.now).order("starts_at") }
@@ -40,5 +41,18 @@ class Experience < ApplicationRecord
     private
         def set_slug
             self.slug = title.parameterize
+        end
+
+        def acceptable_image
+            return unless main_image.attached?
+
+            unless main_image.blob.byte_size <= 5.megabyte
+                errors.add(:main_image, "is too big")
+            end
+
+            acceptable_types = ["image/jpeg", "image/jpg", "image/png"]
+            unless acceptable_types.include?(main_image.content_type)
+                errors.add(:main_image, "must be a JPEG or PNG")
+            end
         end
 end
