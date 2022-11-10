@@ -12,7 +12,7 @@ class Experience < ApplicationRecord
     validates :description, length: {minimum:25}
     validates :price, numericality: {greater_than_or_equal_to: 0}
     validates :capacity, numericality: {only_integer: true, greater_than: 0}
-    validate :acceptable_image
+    # validate :acceptable_image
 
     scope :past, -> { where("starts_at < ?", Time.now).order("starts_at") }
     scope :upcoming, -> { where("starts_at > ?", Time.now).order("starts_at") }
