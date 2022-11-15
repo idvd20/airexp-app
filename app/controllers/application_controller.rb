@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
             end
         end        
 
-        def require_host
+        def require_host?
             unless current_user_host?
                 redirect_to experiences_url, alert: "Unauthorized access!"
             end
